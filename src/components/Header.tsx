@@ -1,14 +1,15 @@
 "use client";
-import Image from "next/image";
-import logo from "../images/logo.png";
-
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
 import { navLinks } from "@/constants/data";
+
+import logo from "../images/logo.png";
 
 import { Search } from "lucide-react";
 import { X } from "lucide-react";
 import { Menu } from "lucide-react";
-import Link from "next/link";
 
 const NavItems = ({ closeMenu }) => (
   <ul className="flex flex-col items-center gap-6 lg:flex-row lg:gap-11 relative z-20 w-full">
@@ -16,9 +17,9 @@ const NavItems = ({ closeMenu }) => (
       <li
         key={id}
         className="text-link uppercase font-bold text-base hover:text-white duration-500 transition-colors">
-        <a href={href} onClick={closeMenu} className="block w-full">
+        <Link href={href} onClick={closeMenu} className="block w-full">
           {name}
-        </a>
+        </Link>
       </li>
     ))}
     <form className="relative">
@@ -90,4 +91,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

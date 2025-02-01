@@ -19,6 +19,7 @@ export default {
         input: "rgba(0, 0, 0, .2)",
         inputDark: "rgba(0, 0, 0, .5)",
         inputText: "#9da1a4",
+        h1Text: "#cfd8dc",
       },
     },
     screens: {
