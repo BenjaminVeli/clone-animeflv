@@ -1,7 +1,13 @@
 import { Triangle } from "lucide-react";
-import AnimeEpisodesList from "@/components/AnimeEpisodesList";
+import { AnimeList } from "@/components/AnimeList";
+import { getAnimes } from "./lib/animes";
 
-export default function Home() {
+export const metadata = {
+  title: "AnimeFLV - Clone",
+}
+
+export default async function Home() {
+  const animes = await getAnimes();
   return (
     <div className="bg-lightGray">
       <div className="container">
@@ -31,7 +37,7 @@ export default function Home() {
               </div>
             </div>
 
-            <AnimeEpisodesList />
+            <AnimeList animes={animes} />
 
           </div>
 

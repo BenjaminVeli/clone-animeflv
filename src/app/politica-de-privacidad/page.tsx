@@ -2,6 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 import DragonBall from "../../images/DragonBall.png";
 
+export const metadata = {
+  title: "Políticas de Privacidad - AnimeFLV.Net",
+}
+
 const page = () => {
   return (
     <div className="relative flex items-center justify-center">
