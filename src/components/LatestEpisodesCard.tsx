@@ -10,7 +10,6 @@ return (
           src={anime.image}
           alt={anime.alt}
           fill
-          sizes="(max-width: 768px) 100vw, 208px"
           className="object-cover object-top transition-all duration-200 ease-in-out hover:scale-125 hover:brightness-75"
         />
       </div>

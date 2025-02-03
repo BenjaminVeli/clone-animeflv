@@ -11,9 +11,8 @@ export function LatestAnimesCard({ latestanime }: { latestanime: LatestAnime }) 
                     </span>
                     <div className="Image">
                         <figure>
-                            <Image src={latestanime.imgLatest} alt="test"
-                                height={100}
-                                width={100}
+                            <Image src={latestanime.imgLatest} alt={latestanime.nameLatest}
+                                fill
                                  />
                         </figure>
                         <span className="Type tv">Anime</span>
