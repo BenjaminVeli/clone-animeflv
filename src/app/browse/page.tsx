@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const metadata = {
   title: "Directorio de Animes - AnimeFLV.Net",
 }

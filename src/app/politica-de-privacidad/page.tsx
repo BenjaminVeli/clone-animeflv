@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import DragonBall from "../../images/DragonBall.png";
 
 export const metadata = {

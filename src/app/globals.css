@@ -50,11 +50,6 @@ body {
   margin: 4px 0;
 }
 
-.today {
-  background-color: #01bcf3;
-  border-radius: 15px;
-}
-
 .today-text {
   line-height: 30px;
   min-width: 65px;
@@ -63,23 +58,6 @@ body {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-}
-
-.ListEpisodios .Image img {
-  transition: 0.2s;
-}
-
-
-
-.ListEpisodios .Image {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.ListEpisodios .Image img {
-  position: relative; 
-  z-index: 1;
 }
 
 .ListEpisodios .Image::before {
@@ -94,7 +72,87 @@ body {
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  z-index: 3; 
+  z-index: 3;
   opacity: 0.8;
-  pointer-events: none; 
+  pointer-events: none;
+}
+
+/*------------ Latest Card ------------*/
+
+.Anime {
+  position: relative;
+}
+
+.Anime.alt.B .Image {
+  margin-bottom: 10px;
+}
+
+.Estreno {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  z-index: 3;
+}
+
+.Estreno:after {
+  right: 5px;
+  top: 0;
+  background-color: #007a2d;
+  width: 7px;
+}
+
+.Estreno:before {
+  left: 0;
+  bottom: 5px;
+  background-color: #007a2d;
+  height: 7px;
+}
+
+.Estreno:before,
+.Estreno:after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  content: "";
+  z-index: 1;
+}
+
+.Estreno span {
+  transform: rotate(-45deg);
+  position: absolute;
+  left: -25px;
+  top: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #01ae43;
+  z-index: 2;
+  line-height: 25px;
+}
+
+
+.Anime.alt>a>.Title {
+  font-size: 13px;
+  white-space: normal;
+  line-height: 20px;
+  font-weight: 700;
+  max-height: none;
+  text-align: center;
+  color: #000;
+  transition: .2s;
+  padding: 0;
+}
+
+.Anime.alt .Image {
+  margin-bottom: 5px;
+  overflow: inherit;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
 }

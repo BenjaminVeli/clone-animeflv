@@ -1,13 +1,18 @@
 import { Triangle } from "lucide-react";
-import { AnimeList } from "@/components/AnimeList";
-import { getAnimes } from "./lib/animes";
+import { getLatestEpisodes } from "./lib/animes";
+import { LatestEpisodesList } from "@/components/LatestEpisodesList";
+import { OngoingAnimeList } from "@/components/OngoingAnimeList";
+import { LatestAnimesList } from "@/components/LatestAnimesList";
+import Image from 'next/image'
+import DragonBall from "../images/DragonBall.png";
 
 export const metadata = {
   title: "AnimeFLV - Clone",
 }
 
 export default async function Home() {
-  const animes = await getAnimes();
+  const { animes, ongoings, latestanimes } = await getLatestEpisodes();
+
   return (
     <div className="bg-lightGray">
       <div className="container">
@@ -22,8 +27,11 @@ export default async function Home() {
 
           <div className="col-span-full md:col-span-3 lg:col-span-2 pt-5 px-2.5">
             <div className="p-4 flex justify-between items-center">
-              <strong className="uppercase text-sm text-navbar">Animes en emisión</strong>
+              <strong className="uppercase text-base text-navbar">Animes en emisión</strong>
               <Triangle size={20} className="text-orange-600 rotate-90" />
+            </div>
+            <div className="">
+              <OngoingAnimeList ongoings={ongoings} />
             </div>
           </div>
 
@@ -31,13 +39,18 @@ export default async function Home() {
             <div className="mb-5">
               <div className="flex justify-between items-center">
                 <h2 className="subtitle-page">Últimos episodios</h2>
-                <div className="today">
+                <div className="rounded-2xl bg-primary">
                   <p className="text-white uppercase text-xs font-bold px-4 today-text">Hoy</p>
                 </div>
               </div>
             </div>
+            <LatestEpisodesList animes={animes} />
 
-            <AnimeList animes={animes} />
+            <div className="mb-5 flex items-center gap-x-3">
+              <Image src={DragonBall} width={40} height={40} alt="Dragon Ball" />
+              <h2 className="subtitle-page">Últimos animes agregados</h2>
+            </div>
+            <LatestAnimesList latestanimes={latestanimes} />
 
           </div>
 
